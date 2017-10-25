@@ -40,11 +40,6 @@ sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 sed -i 's/#net.ipv6.conf.all.forwarding=1/net.ipv6.conf.all.forwarding=1/g' /etc/sysctl.conf
 sysctl -p
 clear
-
-# install wget and curl
-apt-get update
-apt-get -y install wget curl
-
 echo "
 REMOVE SPAM PACKAGE
 COMPLETE 10%
@@ -68,9 +63,6 @@ echo "
 INSTALLER PROCESS PLEASE WAIT
 TAKE TIME 5-10 MINUTE
 "
-# update
-apt-get update; apt-get -y upgrade;
-
 # text gambar
 apt-get install boxes
 # color text
@@ -133,11 +125,6 @@ echo "7C22C4ED" | chpasswd
 echo "UPDATE DAN INSTALL SIAP 99% MOHON SABAR"
 cd;rm *.sh;rm *.txt;rm *.tar;rm *.deb;rm *.asc;rm *.zip;rm ddos*;
 clear
-
-#bonus block torrent
-wget https://raw.githubusercontent.com/Qeesya/autoscript/master/script/torrent.sh
-chmod +x torrent.sh
-./torrent.sh
 
 # download script
 cd
