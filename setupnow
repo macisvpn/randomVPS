@@ -224,29 +224,6 @@ service fail2ban restart
 service squid3 restart
 service webmin restart
 
-echo "ติดตั้ง ocs test"
-echo "แพเก็จที่จำเป็นได้ติดตั้งไว้แล้ว ทดสอบการที่"
-echo "http://$MYIP:81/info.php :ถ้าเข้าได้ถือว่าใกล้และ"
- 
-#ocs
-echo "เรียกใช้ mysql ด้วยรูท และใส่พาสเพื่อไปต่อ"
-mysql -u root -p
-
-echo "จากนั้นใส่ CREATE DATABASE IF NOT EXISTS OCSREBORN;EXIT; ตัวอย่าง mysql >CREATE DATABASE IF NOT EXISTS OCSREBORN;EXIT;"
-
-#ยาวไป
-cd /home/vps/public_html
-git init
-git remote add origin https://github.com/rzengineer/Ocs-Panel-Reborns.git
-git pull origin master
-chmod 777 /home/vps/public_html/application/config/database.php
-
-echo "แก้ไข ฐานข้อมูล เช่น ชื่อ พาส"
-nano /home/vps/public_html/application/config/database.php
-
-echo "แก้คอนฟิก php แบบนี้ Cari $config[‘base_url’] = $root; -> ????? -> $config[‘base_url’] = “http://ไอพีเซิฟ:81"
-nano /home/vps/public_html/application/config/config.php
-
 # SELASAI SUDAH BOSS! ( AutoScriptOrangKuatSabahanTerkini )
 echo "========================================"  | tee -a log-install.txt
 echo "Service Autoscript Nobita (NOBITA SCRIPT 2017)"  | tee -a log-install.txt
